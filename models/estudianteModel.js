@@ -16,7 +16,7 @@ const getTiposSangre = async () => {
 };
 
 const create = async (data) => {
-    const {carne, nombres, apellidos, direccion, telefono, correo_electronico, id_tipo_sangre, fecha_nacimiento} = data;
+    const { carne, nombres, apellidos, direccion, telefono, correo_electronico, id_tipo_sangre, fecha_nacimiento } = data;
     const [res] = await pool.query(
         `INSERT INTO estudiantes (carne, nombres, apellidos, direccion, telefono, correo_electronico, id_tipo_sangre, fecha_nacimiento)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
@@ -31,7 +31,7 @@ const getById = async (id) => {
 };
 
 const update = async (id, data) => {
-    const {carne, nombres, apellidos, direccion, telefono, correo_electronico, id_tipo_sangre, fecha_nacimiento} = data;
+    const { carne, nombres, apellidos, direccion, telefono, correo_electronico, id_tipo_sangre, fecha_nacimiento } = data;
     const [res] = await pool.query(
         `UPDATE estudiantes SET carne=?, nombres=?, apellidos=?, direccion=?, telefono=?, correo_electronico=?, id_tipo_sangre=?, fecha_nacimiento=?
         WHERE id_estudiante=?`,
@@ -46,10 +46,10 @@ const remove = async (id) => {
 };
 
 module.exports = {
-    getAll,
-    getTiposSangre,
-    create,
-    getById,
-    update,
-    remove
-}
+  getAll,
+  getTiposSangre,
+  create,
+  getById,
+  update,
+  remove
+};
